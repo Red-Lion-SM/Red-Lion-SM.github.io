@@ -11,7 +11,7 @@ function getCellPos(xpos, ypos, width, rows) {
 function getCellList(rows, w) {
   const gap = ~~(w / rows);
   let cellList = [];
-  for (let i = 0; i < rows; i++) {
+  for (let i = 0; i < rows / 2; i++) {
     let row = [];
     for (let j = 0; j < rows; j++) {
       let node = new Node(i, j, gap, rows);
@@ -25,7 +25,7 @@ function drawGridLines(ctx, rows, bw) {
   const gap = ~~(bw / rows);
   ctx.lineWidth = 1;
   ctx.strokeStyle = "rgb(0,0,0)";
-  for (let i = 1; i < rows; i++) {
+  for (let i = 1; i < rows / 2; i++) {
     ctx.moveTo(0, i * gap);
     ctx.lineTo(bw, i * gap);
   }
